@@ -1,8 +1,6 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <unistd.h>
 #include <sys/types.h>
-#include <unistd.h>
 
 int main()
 {
@@ -11,11 +9,11 @@ int main()
 	if ((pid= fork()) < 0) printf("Error");
 	if (pid == 0)
 	{	
-		printf("CHILD process\nMy PID: %d \nPID of my parent: %d \n", pid, getppid());
+		printf("CHILD process:\nMy PID: %d\nPID of my parent: %d\n\n", pid, getppid());
 	}
 	else
 	{
-		printf("PARENT process\nMy PID: %d \nPID of my child: %d \n", getpid(), pid);
+		printf("PARENT process:\nMy PID: %d\nPID of my child: %d\n\n", getpid(), pid);
 	}
 
 	return 0; 
